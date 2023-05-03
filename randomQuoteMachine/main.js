@@ -245,7 +245,7 @@ class MyComponent extends React.Component {
                         New Quote
                     </button>
 
-                    <a id="tweet-quote" href="twitter.com/intent/tweet" onClick={null}>
+                    <a id="tweet-quote" href="//twitter.com/intent/tweet" rel="noopener" target="_blank">
                         <i className="fa fa-twitter" style={{ fontSize: '34px' }}></i>
                     </a>
                 </div>
