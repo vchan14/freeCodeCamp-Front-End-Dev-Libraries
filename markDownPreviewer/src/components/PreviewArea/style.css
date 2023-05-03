@@ -1,3 +1,26 @@
-
+.preview-area {
+  width: 100%;
+  height: 100%;
+  background-color: burlywood;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  display: flex;
+}
+.preview-area .preview-box {
+  height: 90%;
+  padding: 20px;
+  border: 2px solid black;
+  overflow-y: auto;
+}
+.preview-area .preview-box * {
+  max-width: 100%;
+}
+.preview-area .preview-box td {
+  border: solid 2px black;
+}
+.preview-area .preview-box th {
+  border: solid 2px black;
+}
 
 /*# sourceMappingURL=style.css.map */

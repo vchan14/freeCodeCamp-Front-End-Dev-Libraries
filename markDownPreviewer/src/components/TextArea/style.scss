@@ -1,0 +1,16 @@
+.text-area {
+  width: 100%;
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  textarea {
+    height: 90%;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid black;
+    resize: none;
+  }
+}
