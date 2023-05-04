@@ -1,0 +1,24 @@
+
+#drum-machine {
+  height: 500px;
+  width: 700px;
+  background-color: beige;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px black;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: space-between;
+
+  #drum-pads {
+    height: max-content;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    justify-items: stretch;
+    align-items: center;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+}
