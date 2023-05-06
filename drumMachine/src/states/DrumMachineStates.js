@@ -4,9 +4,9 @@ import { createStore } from 'redux';
 // Define the initial state
 const initialState = {
 	displayText: 'Chilling',
-	isPowerOn: false,
+	isPowerOn: true,
 	isBankOn: false,
-	volumeLevel: 30
+	volumeLevel: 20
 };
 
 // Define action types
