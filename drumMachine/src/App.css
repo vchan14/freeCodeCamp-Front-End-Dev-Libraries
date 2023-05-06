@@ -1,14 +1,14 @@
 #drum-machine {
-  height: 500px;
   width: 700px;
   background-color: beige;
-  padding: 5px;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 10px 10px 10px black;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   column-gap: 20px;
   justify-content: space-between;
+  row-gap: 20px;
 }
 #drum-machine #drum-pads {
   height: max-content;
@@ -19,6 +19,23 @@
   align-items: center;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
+}
+#drum-machine #display {
+  display: flex;
+  row-gap: 20px;
+  flex-direction: column;
+}
+#drum-machine #display-row {
+  width: 100%;
+  background-color: darkgoldenrod;
+  color: white;
+  height: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=App.css.map */
