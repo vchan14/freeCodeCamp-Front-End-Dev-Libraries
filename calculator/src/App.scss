@@ -1,0 +1,43 @@
+.container-simple {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  flex-direction: column;
+}
+
+
+.numPads {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 300px; /* Change to whatever height you want */
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.display {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  color: white;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 2em;
+}
+
+
+.calculator-container {
+  width: 600px;
+  height: 500px;
+  background: azure;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
