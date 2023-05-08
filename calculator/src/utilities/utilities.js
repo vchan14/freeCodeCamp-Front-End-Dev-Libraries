@@ -1,8 +1,7 @@
 
 
 export const evaluateExpression = function(expression) {
-	return Function(`'use strict'; return (${expression})`)();
-}
+	const result= Function(`'use strict'; return (${expression})`)();
+	return result;
 
-const test= '10-2';
-console.log(evaluateExpression(test))
+}

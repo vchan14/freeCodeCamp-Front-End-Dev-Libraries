@@ -11,7 +11,7 @@ import {
 	isOperationButton
 } from "./assets/Buttons.js";
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentOperation, setCurrentValue, setPrevValue} from "./states/CalculatorStore.js";
+import {setCurrentValue, setPrevValue} from "./states/CalculatorStore.js";
 import {evaluateExpression} from "./utilities/utilities.js";
 
 function App() {
@@ -56,39 +56,39 @@ function App() {
 		const arr = [...prevValue, currentValue];
 		const result = evaluateExpression(arr.join(''));
 		dispatch(setPrevValue([]));
-		dispatch(setCurrentValue(result));
+		dispatch(setCurrentValue(result.toString()));
 	}
 
 	const acButtonClick = () => {
 		// clear previous and current values and operation
 		dispatch(setPrevValue([]));
 		dispatch(setCurrentValue('0'));
-		dispatch(setCurrentOperation(''));
 	}
 
 	const numButtonClick = (inValue) => {
 		if (currentValue === '0') {
 			dispatch(setCurrentValue(inValue));
-		} else if (inValue === '.' && currentValue[currentValue.length-1] === '.') {
-			   return;
+		} else if (inValue === '.' && currentValue.includes('.')) {
+			return;
 		} else {
 			dispatch(setCurrentValue(currentValue + inValue));
 		}
 	}
 
 	const operationButtonClick = (inOperation) => {
+		const OPERATOR = ['+', '-', '*', '/'];
 		let arr = [...prevValue];
 		if (currentValue !== '0') {
 			arr.push(currentValue);
 		}
 
-		if (arr.length > 0 && ['+', '-', '*', '/'].includes(arr.slice(-1)[0])) {
-			arr[prevValue.length - 1] = inOperation;
+		// Give the current operator the highest precedence
+		if (arr.length > 0 && ['+', '*', '/', '-'].includes(arr.slice(-1)[0]) && inOperation !== '-') {
+			while(arr.length>0 && ['+', '*', '/', '-'].includes(arr.slice(-1)[0])) {
+				arr.pop();
+			}
 		}
-			else {
-			arr.push(inOperation);
-		}
-
+		arr.push(inOperation)
 		dispatch(setPrevValue(arr));
 		dispatch(setCurrentValue('0'));
 
