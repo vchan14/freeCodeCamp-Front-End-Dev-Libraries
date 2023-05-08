@@ -32,7 +32,6 @@ function App() {
 
     }
 
-
     const padClick = function(inValue) {
         if (!isPowerOn) {
             dispatch(setDisplayText('Power is OFF'));

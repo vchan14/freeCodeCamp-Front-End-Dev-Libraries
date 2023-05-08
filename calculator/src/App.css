@@ -7,30 +7,7 @@
   background-color: bisque;
   flex-direction: column;
 }
-
-.numPads {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  height: 300px; /* Change to whatever height you want */
-  row-gap: 20px;
-  column-gap: 20px;
-}
-
-.display {
-  display: flex;
-  width: 100%;
-  height: 80px;
-  background-color: black;
-  color: white;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 2em;
-}
-
-.calculator-container {
+.container-simple .calculator-container {
   width: 600px;
   height: 500px;
   background: azure;
@@ -38,6 +15,42 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  row-gap: 20px;
+}
+.container-simple .calculator-container .display {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  min-height: 120px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 2em;
+  align-items: flex-end;
+}
+.container-simple .calculator-container .display .top {
+  font-size: 0.5em;
+  height: 100%;
+}
+.container-simple .calculator-container .display .middle {
+  font-size: 1.5em;
+  min-height: 60px;
+}
+.container-simple .calculator-container .display > * {
+  line-height: 1.2;
+}
+.container-simple .calculator-container .first-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 20px;
+}
+.container-simple .calculator-container .numPads {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 300px; /* Change to whatever height you want */
+  row-gap: 20px;
+  column-gap: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */
