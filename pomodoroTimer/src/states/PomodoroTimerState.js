@@ -1,12 +1,13 @@
 // Import Redux dependencies
 import { createStore } from 'redux';
 
-
+const temp =25;
 export const OriginalState = {
-	sessionLength: 25,
+	sessionLength: temp,
 	breakLength: 5,
-	currentTime: 25 * 60,
-	isRunning: false,
+	currentTime: temp * 60,
+	runningInterval: null,
+	isSession: true,
 }
 
 // Define the initial state
@@ -16,8 +17,8 @@ const initialState = Object.assign({}, OriginalState);
 const SET_SESSION_LENGTH = 'SET_SESSION_LENGTH';
 const SET_BREAK_LENGTH = 'SET_BREAK_LENGTH';
 const SET_CURR_TIME = 'SET_CURR_TIME';
-const TOGGLE_RUNNING = 'TOGGLE_RUNNING';
-
+const SET_RUNNING_INTERVAL = 'SET_RUNNING_INTERVAL';
+const TOGGLE_IS_SESSION = 'TOGGLE_IS_SESSION';
 // Action Creators
 export const setSessionLength = (length) => ({
 	type: SET_SESSION_LENGTH,
@@ -34,22 +35,36 @@ export const setCurrentTime = (length) => ({
 	payload: { length },
 });
 
-export const toggleRunning = () => ({
-	type: TOGGLE_RUNNING,
+export const setRunningInterval = (interval) => ({
+	type: SET_RUNNING_INTERVAL,
+	payload: {interval}
 });
+
+export const toggleIsSession = () => ({
+	type: TOGGLE_IS_SESSION
+})
 
 
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_SESSION_LENGTH:
-			return { ...state, sessionLength: action.payload.length };
+			if(state.runningInterval) {
+				return state;
+			}
+			const newLength = action.payload.length;
+			return { ...state, sessionLength: newLength, currentTime:newLength *60 };
 		case SET_BREAK_LENGTH:
+			if (state.runningInterval) {
+				return state;
+			}
 			return { ...state, breakLength: action.payload.length };
 		case SET_CURR_TIME:
 			return { ...state, currentTime: action.payload.length };
-		case TOGGLE_RUNNING:
-			return { ...state, isRunning: !state.isRunning };
+		case SET_RUNNING_INTERVAL:
+			return { ...state, runningInterval: action.payload.interval };
+		case TOGGLE_IS_SESSION:
+			return { ...state, isSession: !state.isSession}
 		default:
 			return state;
 	}

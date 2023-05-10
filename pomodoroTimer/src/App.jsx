@@ -8,7 +8,7 @@ import display from "./components/Display.jsx";
 function App() {
 
   return (
-    <div className="container-app" style={{display: "flex", flexDirection:"column", rowGap:"20px"}}>
+    <div className="container-app" style={{display: "flex", flexDirection:"column", rowGap:"20px", backgroundColor:"beige"}}>
         <Heading as="h1">Pomodoro Timer</Heading>
         <Settings/>
         <Display/>
