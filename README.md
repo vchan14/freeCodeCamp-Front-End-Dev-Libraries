@@ -6,3 +6,5 @@ There are 5 main projects for this course.
 1. Quote Machine - https://visalbotr-random-quote-machine.netlify.app/
 2. Markdown Previewer - https://visalbotr-markdonw-previewer.netlify.app/
 3. Drum Machine - https://visalbotr-drum-machine.netlify.app/
+4. Calculator - https://visalbotr-calculator.netlify.app/
+5. Pomodoro Timer - https://visalbotr-pomodoro-timer.netlify.app/

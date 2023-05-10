@@ -9,10 +9,14 @@ function App() {
 
   return (
     <div className="container-app" style={{display: "flex", flexDirection:"column", rowGap:"20px", backgroundColor:"beige"}}>
-        <Heading as="h1">Pomodoro Timer</Heading>
-        <Settings/>
-        <Display/>
-        <Control/>
+        <div className="container" style={{border:"3px solid black", padding:"10px", borderRadius:"10px",
+            display:"flex", flexDirection:"column", justifyContent: "center", alignItems: "center", rowGap:"20px"}}>
+            <Heading as="h1">Pomodoro Timer</Heading>
+            <Settings/>
+            <Display/>
+            <Control/>
+        </div>
+
     </div>
   )
 }
