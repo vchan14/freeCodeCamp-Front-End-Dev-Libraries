@@ -1,5 +1,6 @@
-This is a collection of projects for Front End Development Libraries Certificate from Free Code Camp. 
-For more info: https://www.freecodecamp.org/learn/front-end-development-libraries/
+This is a collection of projects I created to earn the Front End Development Libraries Certificate from Free Code Camp. If you're interested, you can check out more information about the certificate here: https://www.freecodecamp.org/learn/front-end-development-libraries/
+
+At work, I've been working with Vue.js, but I wanted to gain a better understanding of React and front-end development fundamentals. So, I decided to take this course.
 
 There are 5 main projects for this course. 
 
